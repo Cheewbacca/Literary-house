@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="static\\css\\main.css")
+        title Document
+    body
+        .wrapper
+            include includes/header.pug
+            .content
+                .informative_strip Небольшой текст про цены на книги или новинки
+                .audio_pages_hrefs
+                    .audio_seans_link
+                        a(href="audio_seans.html") Лечебные аудиосеансы
+                    .audio_home_link   
+                        a(href="#") Литературный дом
+            include includes/footer.pug

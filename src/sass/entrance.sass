@@ -1,0 +1,92 @@
+@import 'imports/reset.sass'
+$grey: #e1e1e1;
+$font: 14px "Open Sans", sans-serif
+html
+    height: 100%;
+body
+    height: 100%;
+    .wrapper
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        @import 'imports/header.sass'
+        .content
+            flex: 1 0 auto;
+            main 
+                max-width: 1170px;
+                margin: 0 auto;
+                padding-top: 30px;
+                position: relative;
+                height: 100%;
+                @import 'imports/bread_crumbs.sass'
+            h3 
+                font-size: 36px;
+                margin: 28px 0px 0px;
+                font-weight: normal;
+            .form-box
+                width: 300px;
+                margin: 0 auto;
+                position: relative;
+                form
+                    display: flex;
+                    flex-wrap: wrap;
+                    border: 1px solid #d5d5d5;
+                    border-radius: 10px;
+                    padding: 60px 30px 30px;
+                    font: $font;
+                    justify-content: space-between;
+                    transition: 0.3s;
+                    #error
+                        position: absolute;
+                        top: 0;
+                        width: 150px;
+                        right: -160px;
+                        padding: 15px;
+                        border: 1px solid #d5d5d5;
+                        display: none;
+                        &:before
+                            content: "";
+                            position: absolute;
+                            width: 10px;
+                            height: 10px;
+                            border-left: 1px solid #d5d5d5;
+                            border-bottom: 1px solid #d5d5d5;
+                            background: #ffffff;
+                            top: 50%;
+                            margin-top: -5px;
+                            left: -5px;
+                            transform: rotate(45deg);
+                    label
+                        margin-bottom: 5px;
+                    input
+                        background-color: initial;
+                        color: initial;
+                        border-style: solid;
+                        margin-bottom: 20px;
+                        width: 100%;
+                        padding-left: 12px;
+                        height: 35px;
+                        border-radius: 10px;
+                        border-color: #e1e1e1;
+                        &:focus
+                            outline: none;
+                            border-color: #21899b;
+                    .confirm 
+                        transition: 0.3s;
+                        display: none;
+                        label
+                            margin-bottom: 5px;
+                    #btn-subm
+                        display: block;
+                        padding: 5px 12px;
+                        background: #e1e1e1;
+                        border-radius: 10px;
+                        border-style: solid;
+                        border-color:  #e1e1e1;
+                        &:focus
+                            outline: none;
+                            background: #21899b;
+                    .explanation 
+                        margin-top: 10px;
+                        text-align: left;
+        @import 'imports/footer.sass'

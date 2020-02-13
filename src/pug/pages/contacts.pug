@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="static\\css\\contacts.css")
+        title Document
+    body
+        .wrapper
+            include includes/header.pug
+            .content
+                .informative_strip Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur blanditiis impedit totam, dignissimos rem et.
+                main
+                    include includes/bread_crumbs.pug
+                    h3 Контакты 
+                    .contacts 
+                        h4 Телефоны: 
+                        ul 
+                            -for(let [key, value] of phones){
+                            -key = key.slice(3);
+                            li.bold 
+                                a(href="tel:" + value)= key
+                            -};
+                        h4 Адрес: 
+                        ul 
+                            li 
+                                a(href="https://www.google.com/maps/place/%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%A0%D0%B0%D1%97%D1%81%D0%B8+%D0%9E%D0%BA%D1%96%D0%BF%D0%BD%D0%BE%D1%97,+2,+%D0%BE%D1%84%D0%B8%D1%81+19%2F14,+%D0%9A%D0%B8%D1%97%D0%B2,+02000/@50.4507015,30.5947004,17z/data=!3m1!4b1!4m5!3m4!1s0x40d4cfee23bd67f5:0xbb411d1d7063fa6a!8m2!3d50.4507015!4d30.5968891" target="_blanc") 02002, г. Киев, ул. Раисы Окипной, 2, офис 19/14
+                            li Приём ежедневно (без выходных)
+                            li с 8:00 до 20:00
+                    .map 
+                        iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.48434296949!2d30.594700415154612!3d50.45070489522844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cfee23bd67f5%3A0xbb411d1d7063fa6a!2z0LLRg9C70LjRhtGPINCg0LDRl9GB0Lgg0J7QutGW0L_QvdC-0ZcsIDIsINC-0YTQuNGBIDE5LzE0LCDQmtC40ZfQsiwgMDIwMDA!5e0!3m2!1sru!2sua!4v1581515374762!5m2!1sru!2sua" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="")
+            include includes/footer.pug

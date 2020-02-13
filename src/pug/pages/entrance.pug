@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="static\\css\\entrance.css")
+        title Document
+    body
+        .wrapper
+            include includes/header.pug
+            .content
+                main
+                    include includes/bread_crumbs.pug
+                    h3 Вход в личный кабинет
+                    .form-box
+                        form#form
+                            #error
+                                p#error_text Lorem, ipsum.
+                            label(value="name") Имя:
+                            input(type="text" placeholder="Введите имя")#name
+                            label(value="tel") Номер телефона:
+                            input(type="tel" placeholder="097 060 5656")#phone 
+                            .confirm#conf
+                                label(value="conf") На ваш номер была отправлена СМС с кодом, введите код ниже для подтверждения номера телефона
+                                input(type="text" placeholder="1488")#conf-val
+                            button()#btn-subm Вход
+                            p.explanation *Для незарегистрированых пользователей происходит автоматичесская регистрация
+            include includes/footer.pug
+        
+        script(src="static//js//confirm.js")

@@ -1,0 +1,38 @@
+header
+    .header-inner
+        .header-logo_and_nav
+            a(href="index.html").header-logo
+                h1.header-logo-top Аудіокниги
+                h2.header-logo-bot дуже короткий слоган
+            nav
+                ul 
+                    -let items = new Map();
+                    -items.set("Лечебные аудиосеансы", "audio_seans.html").set("Литературный дом", "#").set("Личный Кабинет", "my_room.html")
+                    -for(let [key,value] of items){
+                        li 
+                            a(href="" + value)= key
+                    -};
+        .header-info
+            .header-languages
+                ul 
+                    -let languages = new Map();
+                    -let lanImages = [ "ukr.png", "rus.png"];
+                    -languages.set("Українська", "#").set("Русский", "#")
+                    -let i = 0;
+                    -for(let [key,value] of languages){
+                        li 
+                            img(src="static//img//" + lanImages[i], alt="")
+                            - i += 1;
+                            a(href="" + value)= key 
+                    -};
+            .reception
+                p Приём ежедневно <br> (без выходных) <br> с 8:00 до 20:00
+            .phones 
+                ul 
+                    -let phones = new Map();
+                    -phones.set("+38 (097) 060-56-56", "+38 (097) 060-56-56").set("+38 (050) 478-93-95", "+38 (050) 478-93-95").set("+38 (063) 772-29-44", "+38 (063) 772-29-44")
+                    -for(let [key, value] of phones){
+                    -value.trim();
+                    li 
+                        a(href="tel:" + value)= key
+                    -};

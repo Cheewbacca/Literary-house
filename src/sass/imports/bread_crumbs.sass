@@ -1,0 +1,22 @@
+.bread_crumbs
+    ul 
+        display: flex;
+        li 
+            position: relative;
+            margin-right: 15px;
+            &:not(:last-child):after
+                content: '';
+                position: absolute;
+                width: 5px;
+                height: 5px;
+                border-bottom: 1px solid #000000;
+                border-right: 1px solid #000000;
+                top: 50%;
+                right: -10px;
+                margin-top: -2.5px;
+                transform: rotate(-45deg);
+            &:last-child
+                a
+                    user-select: none;
+                    cursor: auto;
+                    pointer-events: none;
