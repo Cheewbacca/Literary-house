@@ -8,7 +8,8 @@ let conf = document.getElementById("conf");
 
 
 const name_regexp = new RegExp("[A-Za-zА-Яа-яЁё]{2,}");
-const phone_regexp = /(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?/;
+// const phone_regexp = /(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?/;
+const phone_regexp = /[0-9]{10}/;
 const sms_regexp = /^\d{4}$/;
 
 submit.addEventListener("click", (e) => {
