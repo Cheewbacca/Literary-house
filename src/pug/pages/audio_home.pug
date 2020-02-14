@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="static\\css\\audio_seans.css")
+        title Document
+    body
+        .wrapper
+            include includes/header.pug
+            .content
+                .informative_strip Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi obcaecati tempora repudiandae et, earum provident!
+                main
+                    include includes/bread_crumbs.pug
+                    h3 Лечебные аудиосеансы
+                    audio(src="static//audio//test.mp3" controls)
+                    a(href="entrance.html") Вход
+                    a(href="my_room.html") Кабинет
+            include includes/footer.pug
