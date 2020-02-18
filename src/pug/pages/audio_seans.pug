@@ -4,6 +4,7 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="static\\css\\audio_seans.css")
+        link(rel="stylesheet", href="static\\css\\audio_test.css")
         title Document
     body
         .wrapper
@@ -13,5 +14,28 @@ html(lang="en")
                 main
                     include includes/bread_crumbs.pug
                     h3 Лечебные аудиосеансы
-                    audio(src="static//audio//test.mp3" controls)
+                    #player
+                        #player-track
+                            //- #album-name
+                            #track-name
+                            #track-time
+                                #current-time
+                                #track-length
+                            #s-area
+                                #ins-time
+                                #s-hover
+                                #seek-bar
+                        #player-content
+                            #player-controls
+                                .control
+                                    .button#play-previous
+                                        i.fas.fa-backwar 
+                                .control
+                                    .button#play-pause-button
+                                        i.fa.fa-play
+                                .control
+                                    .button#play-next
+                                        i.fas.fa-forward
             include includes/footer.pug
+        script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+        script(src="static\\js\\audio.js")

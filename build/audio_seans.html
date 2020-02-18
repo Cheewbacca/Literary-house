@@ -4,6 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="static\css\audio_seans.css"/>
+    <link rel="stylesheet" href="static\css\audio_test.css"/>
     <title>Document</title>
   </head>
   <body>
@@ -53,7 +54,33 @@
             </ul>
           </div>
           <h3>Лечебные аудиосеансы</h3>
-          <audio src="static//audio//test.mp3" controls="controls"></audio>
+          <div id="player">
+            <div id="player-track">
+              <div id="track-name"></div>
+              <div id="track-time">
+                <div id="current-time"></div>
+                <div id="track-length"></div>
+              </div>
+              <div id="s-area">
+                <div id="ins-time"></div>
+                <div id="s-hover"></div>
+                <div id="seek-bar"></div>
+              </div>
+            </div>
+            <div id="player-content">
+              <div id="player-controls">
+                <div class="control">
+                  <div class="button" id="play-previous"><i class="fas fa-backwar"> </i></div>
+                </div>
+                <div class="control">
+                  <div class="button" id="play-pause-button"><i class="fa fa-play"></i></div>
+                </div>
+                <div class="control">
+                  <div class="button" id="play-next"><i class="fas fa-forward"></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </main>
       </div>
       <footer>
@@ -88,5 +115,7 @@
         </div>
       </footer>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="static\js\audio.js"></script>
   </body>
 </html>
