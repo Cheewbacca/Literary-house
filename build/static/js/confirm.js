@@ -46,7 +46,7 @@ function checkStatusOfRequest(data) {
 
 // Форма 
 
-submit.addEventListener("click", (e) => {
+submit.addEventListener("click", () => {
 
     // Запрет на отправку формы 
 
@@ -94,24 +94,28 @@ submit.addEventListener("click", (e) => {
 
                     // Валидаця смс-кода в случае успешной отправки формы
 
+                    submit.removeEventListener("click");
                     conf.style.display = "block";
-                    let sms = document.getElementById("conf-val");
-                    if(!sms.value){
-                        error.style.display = "block";
-                        error.style.top = '200px';
-                        error_text.innerHTML = "Введите код из смс";
-                    }else if(!sms_regexp.test(sms.value)){
-                        error.style.display = "block";
-                        error.style.top = '200px';
-                        error_text.innerHTML = "Введите код в правильном формате";
-                        setTimeout(() => error.style.display = "none", 3000);
-                    }else{
-                        // Отправка формы на сервер
-                        $("form").unbind("submit", preventDefault);
-                        submit.removeEventListener("click");
-                    }
+                    $("form").unbind("submit", preventDefault);
                 }
             },
         });
+    }
+});
+
+form.addEventListener("submit", () => {
+    let sms = document.getElementById("conf-val");
+
+    if(!sms.value){
+        error.style.display = "block";
+        error.style.top = '200px';
+        error_text.innerHTML = "Введите код из смс";
+    }else if(!sms_regexp.test(sms.value)){
+        error.style.display = "block";
+        error.style.top = '200px';
+        error_text.innerHTML = "Введите код в правильном формате";
+        setTimeout(() => error.style.display = "none", 3000);
+    }else{
+        $("form").unbind("submit", preventDefault);
     }
 });
