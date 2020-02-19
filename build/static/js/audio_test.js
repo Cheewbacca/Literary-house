@@ -6,13 +6,17 @@ document.addEventListener("DOMContentLoaded", function(){
     cur_time = document.querySelectorAll('.current-time');
     duration = document.querySelectorAll('.track-length');
 
+    sArea = document.querySelectorAll('.s-area');
+
     trackTime = document.querySelectorAll('.track-time');
     tProgress = document.querySelectorAll('.current-time')
     tTime = document.querySelectorAll('.track-length');
-    
+
+    var seekBar = $('.seek-bar'), trackTime = $('.track-time'), tProgress = $('.current-time'), tTime = $('.track-length')
+
     audio_list = [];
 
-    var curMinutes, curSeconds, durMinutes, durSeconds, playProgress, nTime = 0; tFlag = false;
+    var seekLoc, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, nTime = 0; tFlag = false;
 
     // Заполнение массива музыкой
 
@@ -23,17 +27,42 @@ document.addEventListener("DOMContentLoaded", function(){
         $(duration).text("00:00");
     }
 
-    // Прогресс проигрывания 
+    // Инициализация плеера
 
-    function updateCurrTime(audio, trackTime, tProgress, tTime, seekBar)
-        {
+    for(let i = 0; i < play.length; i++){
+        let audio = new Audio(audio_list.pop());
+
+        play[i].addEventListener("click", function(){
+            setTimeout(function()
+            {
+                if(audio.paused)
+                {
+                    $(play[i]).removeClass("fa-play");
+                    $(play[i]).addClass("fa-pause");
+                    audio.play();
+                }
+                else
+                {
+                    $(play[i]).removeClass("fa-pause");
+                    $(play[i]).addClass("fa-play");
+                    audio.pause();
+                }
+            },300);
+
+        })
+
+        // Прогресс проигрывания 
+
+        audio.addEventListener("timeupdate", updateCurrTime);
+
+        function updateCurrTime(){
             nTime = new Date();
             nTime = nTime.getTime();
 
             if( !tFlag )
             {
                 tFlag = true;
-                $(trackTime).addClass('active');
+                $(trackTime[i]).addClass('active');
             }
 
             curMinutes = Math.floor(audio.currentTime / 60);
@@ -55,56 +84,38 @@ document.addEventListener("DOMContentLoaded", function(){
                 durSeconds = '0'+durSeconds;
             
             if( isNaN(curMinutes) || isNaN(curSeconds) )
-                $(tProgress).text('00:00');
+                $(tProgress[i]).text('00:00');
             else
-                $(tProgress).text(curMinutes+':'+curSeconds);
+                $(tProgress[i]).text(curMinutes+':'+curSeconds);
             
             if( isNaN(durMinutes) || isNaN(durSeconds) )
-                $(tTime).text('00:00');
+                $(tTime[i]).text('00:00');
             else
-                $(tTime).text(durMinutes+':'+durSeconds);
+                $(tTime[i]).text(durMinutes+':'+durSeconds);
             
             if( isNaN(curMinutes) || isNaN(curSeconds) || isNaN(durMinutes) || isNaN(durSeconds) )
-                $(trackTime).removeClass('active');
+                $(trackTime[i]).removeClass('active');
             else
-                $(trackTime).addClass('active');
+                $(trackTime[i]).addClass('active');
             
-            $(seekBar).width(playProgress+'%');
+            $(seekBar[i]).width(playProgress+'%');
             
             if( playProgress == 100 )
             {
-                $(seekBar).width(0);
-                $(tProgress).text('00:00');
+                $(seekBar[i]).width(0);
+                $(tProgress[i]).text('00:00');
                 clearInterval(buffInterval);
             }
         }
-    // Инициализация плеера
 
-    for(let i = 0; i < play.length; i++){
-        let audio = new Audio(audio_list.pop());
+        sArea[i].addEventListener("click", playFromClickedPos);
 
-        audio.ontimeupdate  = updateCurrTime(audio, trackTime[i], tProgress[i], tTime[i], seekBar[i]);
-
-        play[i].addEventListener("click", function(){
-            setTimeout(function()
-            {
-
-                if(audio.paused)
-                {
-                    $(play[i]).removeClass("fa-play");
-                    $(play[i]).addClass("fa-pause");
-                    audio.play();
-                }
-                else
-                {
-                    $(play[i]).removeClass("fa-pause");
-                    $(play[i]).addClass("fa-play");
-                    audio.pause();
-                }
-            },300);
-
-        })
-
+        function playFromClickedPos(){
+            seekBarPos = $(sArea[i]).offset(); 
+            seekT = event.clientX - seekBarPos.left;
+            seekLoc = audio.duration * (seekT / $(sArea[i]).outerWidth());
+            audio.currentTime = seekLoc;
+            seekBar[i].width(seekT);
+        }
     }
-
 });
