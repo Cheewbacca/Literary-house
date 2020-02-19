@@ -17,15 +17,16 @@ html(lang="en")
                         form#form
                             #error
                                 p#error_text Lorem, ipsum.
-                            //- label(value="name") Имя:
-                            //- input(type="text" placeholder="Введите имя")#name
                             label(value="tel") Номер телефона:
-                            input(type="tel" placeholder="0970605656")#phone 
+                            input(type="tel" placeholder="0970605656" name="tel")#phone 
                             .confirm#conf
                                 label(value="conf") На ваш номер была отправлена СМС с кодом, введите код ниже для подтверждения номера телефона
-                                input(type="text" placeholder="1488")#conf-val
-                            button()#btn-subm Вход
+                                input(type="text" placeholder="1488" name="sms")#conf-val
+                            button#btn-subm Вход
                             p.explanation *Для незарегистрированых пользователей происходит автоматичесская регистрация
+                        form(name="hidden_form" action="url")#hidden_form
+                            input(type="text" name="tel_hidden" hidden)#hidden_phone
             include includes/footer.pug
-        
+
+        script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
         script(src="static//js//confirm.js")

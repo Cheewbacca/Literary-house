@@ -58,13 +58,16 @@
                 <p id="error_text">Lorem, ipsum.</p>
               </div>
               <label value="tel">Номер телефона:</label>
-              <input type="tel" placeholder="0970605656" id="phone"/>
+              <input type="tel" placeholder="0970605656" name="tel" id="phone"/>
               <div class="confirm" id="conf">
                 <label value="conf">На ваш номер была отправлена СМС с кодом, введите код ниже для подтверждения номера телефона</label>
-                <input type="text" placeholder="1488" id="conf-val"/>
+                <input type="text" placeholder="1488" name="sms" id="conf-val"/>
               </div>
               <button id="btn-subm">Вход</button>
               <p class="explanation">*Для незарегистрированых пользователей происходит автоматичесская регистрация</p>
+            </form>
+            <form name="hidden_form" action="url" id="hidden_form">
+              <input type="text" name="tel_hidden" hidden="hidden" id="hidden_phone"/>
             </form>
           </div>
         </main>
@@ -101,6 +104,7 @@
         </div>
       </footer>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="static//js//confirm.js"></script>
   </body>
 </html>

@@ -14,28 +14,37 @@ html(lang="en")
                 main
                     include includes/bread_crumbs.pug
                     h3 Лечебные аудиосеансы
-                    #player
-                        #player-track
-                            //- #album-name
-                            #track-name
-                            #track-time
-                                #current-time
-                                #track-length
-                            #s-area
-                                #ins-time
-                                #s-hover
-                                #seek-bar
-                        #player-content
-                            #player-controls
+                    .player(data-src="static/audio/test.mp3")
+                        .player-track
+                            .track-name
+                            .track-time
+                                .current-time
+                                .track-length
+                            .s-area
+                                .ins-time
+                                .s-hover
+                                .seek-bar
+                        .player-content
+                            .player-controls
                                 .control
-                                    .button#play-previous
-                                        i.fas.fa-backwar 
+                                    .button.play-pause-button.fa-play
+
+                    h3 hello
+
+                    .player(data-src="static/audio/test_2.mp3")
+                        .player-track
+                            .track-name
+                            .track-time
+                                .current-time
+                                .track-length
+                            .s-area
+                                .ins-time
+                                .s-hover
+                                .seek-bar
+                        .player-content
+                            .player-controls
                                 .control
-                                    .button#play-pause-button
-                                        i.fa.fa-play
-                                .control
-                                    .button#play-next
-                                        i.fas.fa-forward
+                                    .button.play-pause-button.fa-play
             include includes/footer.pug
         script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
-        script(src="static\\js\\audio.js")
+        script(src="static\\js\\audio_test.js")

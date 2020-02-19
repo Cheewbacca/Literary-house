@@ -54,29 +54,45 @@
             </ul>
           </div>
           <h3>Лечебные аудиосеансы</h3>
-          <div id="player">
-            <div id="player-track">
-              <div id="track-name"></div>
-              <div id="track-time">
-                <div id="current-time"></div>
-                <div id="track-length"></div>
+          <div class="player" data-src="static/audio/test.mp3">
+            <div class="player-track">
+              <div class="track-name"></div>
+              <div class="track-time">
+                <div class="current-time"></div>
+                <div class="track-length"></div>
               </div>
-              <div id="s-area">
-                <div id="ins-time"></div>
-                <div id="s-hover"></div>
-                <div id="seek-bar"></div>
+              <div class="s-area">
+                <div class="ins-time"></div>
+                <div class="s-hover"></div>
+                <div class="seek-bar"></div>
               </div>
             </div>
-            <div id="player-content">
-              <div id="player-controls">
+            <div class="player-content">
+              <div class="player-controls">
                 <div class="control">
-                  <div class="button" id="play-previous"><i class="fas fa-backwar"> </i></div>
+                  <div class="button play-pause-button fa-play"></div>
                 </div>
+              </div>
+            </div>
+          </div>
+          <h3>hello</h3>
+          <div class="player" data-src="static/audio/test_2.mp3">
+            <div class="player-track">
+              <div class="track-name"></div>
+              <div class="track-time">
+                <div class="current-time"></div>
+                <div class="track-length"></div>
+              </div>
+              <div class="s-area">
+                <div class="ins-time"></div>
+                <div class="s-hover"></div>
+                <div class="seek-bar"></div>
+              </div>
+            </div>
+            <div class="player-content">
+              <div class="player-controls">
                 <div class="control">
-                  <div class="button" id="play-pause-button"><i class="fa fa-play"></i></div>
-                </div>
-                <div class="control">
-                  <div class="button" id="play-next"><i class="fas fa-forward"></i></div>
+                  <div class="button play-pause-button fa-play"></div>
                 </div>
               </div>
             </div>
@@ -116,6 +132,6 @@
       </footer>
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="static\js\audio.js"></script>
+    <script src="static\js\audio_test.js"></script>
   </body>
 </html>
