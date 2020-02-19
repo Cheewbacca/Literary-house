@@ -33,11 +33,11 @@ function preventDefault(e) {
 
 function checkStatusOfRequest(data) {
     let status = data.status;
-
+    let message = data.responseJSON.message;
     if (status != 200) {
         error.style.display = "block";
         error.style.top = '60px';
-        error_text.innerHTML = "При отправке запроса что-то пошло не так";
+        error_text.innerHTML = message;
         setTimeout(()=>error.style.display = "none", 5000)
         return 1;
     }
