@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function(){
                     audio.pause();
                 }
             },300);
+
         })
 
     }

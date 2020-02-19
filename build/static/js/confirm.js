@@ -100,7 +100,7 @@ function submitForm(){
 
 submit.addEventListener("click", submitForm);
 
-form.addEventListener("submit", () => {
+submit.addEventListener("click", () => {
     let sms = document.getElementById("conf-val");
     if(!sms.value){
         error.style.display = "block";
