@@ -39,7 +39,7 @@ function checkStatusOfRequest(data) {
         error.style.top = '60px';
         error_text.innerHTML = message;
         setTimeout(()=>error.style.display = "none", 5000)
-        return 1;
+        return 1;   
     }
     return 0;
 }
@@ -89,9 +89,9 @@ submit.addEventListener("click", (e) => {
 
                 // Проверка отправилась ли форма
 
-                let error = checkStatusOfRequest(data);
+                let request_error = checkStatusOfRequest(data);
 
-                if(!error){
+                if(!request_error){
 
                     // Валидаця смс-кода в случае успешной отправки формы
 
