@@ -78,15 +78,17 @@ document.addEventListener("DOMContentLoaded", function(){
                 clearInterval(buffInterval);
             }
         }
-
     // Инициализация плеера
 
     for(let i = 0; i < play.length; i++){
         let audio = new Audio(audio_list.pop());
 
+        audio.ontimeupdate  = updateCurrTime(audio, trackTime[i], tProgress[i], tTime[i], seekBar[i]);
+
         play[i].addEventListener("click", function(){
             setTimeout(function()
             {
+
                 if(audio.paused)
                 {
                     $(play[i]).removeClass("fa-play");
@@ -100,8 +102,6 @@ document.addEventListener("DOMContentLoaded", function(){
                     audio.pause();
                 }
             },300);
-
-            $(audio).on('timeupdate',updateCurrTime(audio, trackTime[i], tProgress[i], tTime[i], seekBar[i]));
         })
 
     }

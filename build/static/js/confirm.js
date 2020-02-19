@@ -44,15 +44,9 @@ function checkStatusOfRequest(data) {
     return 0;
 }
 
-// Форма 
-
-submit.addEventListener("click", () => {
-
-    // Запрет на отправку формы 
+function submitForm(){
 
     $("form").bind("submit", preventDefault);
-
-    // Валидация номера телефона 
 
     if(!phone.value){
         error.style.display = "block";
@@ -93,19 +87,21 @@ submit.addEventListener("click", () => {
                 if(!request_error){
 
                     // Валидаця смс-кода в случае успешной отправки формы
-
-                    submit.removeEventListener("click");
+                    submit.removeEventListener("click", submitForm);
                     conf.style.display = "block";
                     $("form").unbind("submit", preventDefault);
                 }
             },
         });
     }
-});
+};
+
+// Форма 
+
+submit.addEventListener("click", submitForm);
 
 form.addEventListener("submit", () => {
     let sms = document.getElementById("conf-val");
-
     if(!sms.value){
         error.style.display = "block";
         error.style.top = '200px';
