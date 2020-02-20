@@ -4,6 +4,7 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="static\\css\\audio_seans.css")
+        link(rel="stylesheet", href="static\\css\\audio_test.css")
         title Document
     body
         .wrapper
@@ -12,8 +13,35 @@ html(lang="en")
                 .informative_strip Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi obcaecati tempora repudiandae et, earum provident!
                 main
                     include includes/bread_crumbs.pug
-                    h3 Лечебные аудиосеансы
-                    audio(src="static//audio//test.mp3" controls)
-                    a(href="entrance.html") Вход
-                    a(href="my_room.html") Кабинет
+                    h3 Литературный дом
+                    .music_list
+                        .offer
+                            .text
+                                h4 Название книги
+                                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum amet nisi quod, voluptatibus maiores pariatur, assumenda sapiente aperiam quasi accusamus rerum dolorum facilis iste! Officia repellendus perferendis tempore ipsa ullam?
+                            a(href="entrance.html").buy#buy_book Купить
+                        .offer
+                            .text
+                                h4 Название книги
+                                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum amet nisi quod, voluptatibus maiores pariatur, assumenda sapiente aperiam quasi accusamus rerum dolorum facilis iste! Officia repellendus perferendis tempore ipsa ullam?
+                            a(href="entrance.html").buy#buy_book Купить
+                        .offer
+                            .text
+                                h4 Название книги
+                                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum amet nisi quod, voluptatibus maiores pariatur, assumenda sapiente aperiam quasi accusamus rerum dolorum facilis iste! Officia repellendus perferendis tempore ipsa ullam?
+                            a(href="entrance.html").buy#buy_book Купить
+                        .offer
+                            .text
+                                h4 Название книги
+                                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum amet nisi quod, voluptatibus maiores pariatur, assumenda sapiente aperiam quasi accusamus rerum dolorum facilis iste! Officia repellendus perferendis tempore ipsa ullam?
+                            a(href="entrance.html").buy#buy_book Купить
+                        .offer
+                            .text
+                                h4 Название книги
+                                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum amet nisi quod, voluptatibus maiores pariatur, assumenda sapiente aperiam quasi accusamus rerum dolorum facilis iste! Officia repellendus perferendis tempore ipsa ullam?
+                            a(href="entrance.html").buy#buy_book Купить
+
+
             include includes/footer.pug
+        script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+        script(src="static\\js\\audio_test.js")

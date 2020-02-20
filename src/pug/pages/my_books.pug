@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="static\\css\\my_audio.css")
+        link(rel="stylesheet", href="static\\css\\audio_test.css")
+        title Document
+    body
+        .wrapper
+            include includes/header.pug
+            .content
+                .informative_strip Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi obcaecati tempora repudiandae et, earum provident!
+                main
+                    include includes/bread_crumbs.pug
+                    h3 Мои аудиокниги
+                    .music
+                        .player(data-src="static/audio/test.mp3")
+                            include includes/player-content.pug
+                        .player(data-src="static/audio/test_2.mp3")
+                            include includes/player-content.pug
+                        .player(data-src="static/audio/test_2.mp3")
+                            include includes/player-content.pug
+                        .player(data-src="static/audio/test_2.mp3")
+                            include includes/player-content.pug
+                        .player(data-src="static/audio/test_2.mp3")
+                            include includes/player-content.pug
+
+
+            include includes/footer.pug
+        script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+        script(src="static\\js\\audio_test.js")

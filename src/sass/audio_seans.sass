@@ -24,10 +24,33 @@ body
                     font-size: 36px;
                     margin: 28px 0;
                     font-weight: normal;
-                .music 
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    align-items: center;
+                .music_list
+                    .offer
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;   
+                        margin-top: 25px;
+                        border: 1px solid $grey;
+                        padding: 20px;
+                        border-radius: 25px; 
+                        .text
+                            float: left;
+                            width: 80%;
+                            h4 
+                                font-size: 22px;
+                                margin-bottom: 10px;
+                            p
+
+                        .buy
+                            display: block;
+                            padding: 5px 12px;
+                            background: #e1e1e1;
+                            border-radius: 10px;
+                            border-style: solid;
+                            border-color:  #e1e1e1;
+                            &:hover
+                                outline: none;
+                                background: #21899b;
+                                
 
         @import 'imports/footer.sass'
