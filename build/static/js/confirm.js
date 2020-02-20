@@ -2,7 +2,6 @@
 
 let submit = document.getElementById("btn-subm");
 let submit_second = document.getElementById("btn-subm_second");
-submit_second.style.display = "none";
 let phone = document.getElementById("phone");
 let error = document.getElementById("error");
 let error_text = document.getElementById("error_text");
@@ -121,19 +120,3 @@ submit_second.addEventListener("click", function(){
         $("form").unbind("submit", preventDefault);
     }
 });
-
-// submit.addEventListener("click", () => {
-//     let sms = document.getElementById("conf-val");
-//     if(!sms.value){
-//         error.style.display = "block";
-//         error.style.top = '200px';
-//         error_text.innerHTML = "Введите код из смс";
-//     }else if(!sms_regexp.test(sms.value)){
-//         error.style.display = "block";
-//         error.style.top = '200px';
-//         error_text.innerHTML = "Введите код в правильном формате";
-//         setTimeout(() => error.style.display = "none", 3000);
-//     }else{
-//         $("form").unbind("submit", preventDefault);
-//     }
-// });
