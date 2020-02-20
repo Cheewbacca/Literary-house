@@ -1,6 +1,8 @@
 // Инициализация переменных
 
 let submit = document.getElementById("btn-subm");
+let submit_second = document.getElementById("btn-subm_second");
+submit_second.style.display = "none";
 let phone = document.getElementById("phone");
 let error = document.getElementById("error");
 let error_text = document.getElementById("error_text");
@@ -26,6 +28,11 @@ phone.addEventListener('paste', inputNumbersOnly);
 
 function preventDefault(e) {
     e.preventDefault();
+}
+
+function changeButtons(){
+    submit.style.display = "none";
+    submit_second.style.display = "block";
 }
 
 
@@ -85,11 +92,8 @@ function submitForm(){
                 let request_error = checkStatusOfRequest(data);
 
                 if(!request_error){
-
-                    // Валидаця смс-кода в случае успешной отправки формы
                     submit.removeEventListener("click", submitForm);
                     conf.style.display = "block";
-                    $("form").unbind("submit", preventDefault);
                 }
             },
         });
@@ -100,7 +104,9 @@ function submitForm(){
 
 submit.addEventListener("click", submitForm);
 
-submit.addEventListener("click", () => {
+// $("form").unbind("submit", preventDefault);
+
+submit_second.addEventListener("click", function(){
     let sms = document.getElementById("conf-val");
     if(!sms.value){
         error.style.display = "block";
@@ -115,3 +121,19 @@ submit.addEventListener("click", () => {
         $("form").unbind("submit", preventDefault);
     }
 });
+
+// submit.addEventListener("click", () => {
+//     let sms = document.getElementById("conf-val");
+//     if(!sms.value){
+//         error.style.display = "block";
+//         error.style.top = '200px';
+//         error_text.innerHTML = "Введите код из смс";
+//     }else if(!sms_regexp.test(sms.value)){
+//         error.style.display = "block";
+//         error.style.top = '200px';
+//         error_text.innerHTML = "Введите код в правильном формате";
+//         setTimeout(() => error.style.display = "none", 3000);
+//     }else{
+//         $("form").unbind("submit", preventDefault);
+//     }
+// });
