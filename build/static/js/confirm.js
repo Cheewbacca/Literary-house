@@ -92,6 +92,7 @@ function submitForm(){
 
                 if(!request_error){
                     submit.removeEventListener("click", submitForm);
+                    changeButtons();
                     conf.style.display = "block";
                 }
             },
