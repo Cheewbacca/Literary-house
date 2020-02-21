@@ -4,6 +4,7 @@ footer
     background-color: #767676;
     color: #ffffff;
     width: 100%;
+    height: auto;
     a
         color: #ffffff;
     .footer-inner
@@ -14,17 +15,51 @@ footer
         justify-content: space-between;
         font: $font;
         line-height: 24px;
+        flex-wrap: wrap;
+        height: auto;
+        @media screen and (max-width: 940px)
+            align-items: center;
+            justify-content: center;
         .footer-h
             font-weight: bold;
         .site-author
+            min-width: 220px;
+            @media screen and (max-width: 940px)
+                width: 50%;
+            @media screen and (max-width: 625px)
+                width: 100%;
+                margin: 0 auto;
+                text-align: center;
+                margin-top: 20px;
         .phones
+            min-width: 150px;
+            @media screen and (max-width: 940px)
+                width: 50%;
+            @media screen and (max-width: 625px)
+                width: 100%;
+                text-align: center;
+                margin-top: 20px
             ul 
                 li 
                     
         .address 
+            min-width: 300px;
+            @media screen and (max-width: 940px)
+                width: 50%;
+            @media screen and (max-width: 625px)
+                width: 100%;
+                text-align: center;
+                margin-top: 20px
             ul 
                 li 
         .services
+            min-width: 210px;
+            @media screen and (max-width: 940px)
+                width: 50%;
+            @media screen and (max-width: 625px)
+                width: 100%;
+                text-align: center;
+                margin-top: 20px
             ul 
                 li 
                    

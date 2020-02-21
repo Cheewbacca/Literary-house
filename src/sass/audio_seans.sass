@@ -19,7 +19,7 @@ body
             main 
                 max-width: 1170px;
                 margin: 0 auto;
-                padding-top: 30px;
+                padding: 30px 12px 0;
                 @import 'imports/bread_crumbs.sass'
                 h3 
                     font-size: 36px;
@@ -34,15 +34,19 @@ body
                         border: 1px solid $grey;
                         padding: 20px;
                         border-radius: 25px; 
+                        flex-wrap: wrap;
                         .text
                             float: left;
                             width: 80%;
+                            min-width: 260px;
                             h4 
                                 font-size: 22px;
                                 margin-bottom: 10px;
-                            p
+                            .price
+                                margin-top: 10px;
 
                         .buy
+                            margin-top: 25px;
                             display: block;
                             padding: 5px 12px;
                             background: #e1e1e1;

@@ -55,15 +55,31 @@ function submitForm(){
     $("form").bind("submit", preventDefault);
 
     if(!phone.value){
-        error.style.display = "block";
-        error.style.top = '60px';
-        error_text.innerHTML = "Значение не должно быть пустым";
-        setTimeout(() => error.style.display = "none", 3000);
+        if(window.innerWidth >= 650){
+            error.style.display = "block";
+            error.style.top = '60px';
+            error_text.innerHTML = "Значение не должно быть пустым";
+        }else{
+            error.style.display = "block";
+            error.style.top = '10px';
+            error.style.right = '50%';
+            error.style.marginRight = '-75px';
+            error_text.innerHTML = "Значение не должно быть пустым";
+        }
+        setTimeout(() => error.style.display = "none", 2000);
     }else if(!phone_regexp.test(phone.value)){
-        error.style.display = "block";
-        error.style.top = '60px';
-        error_text.innerHTML = "Введите правильный номер в указаном формате";
-        setTimeout(() => error.style.display = "none", 3000);
+        if(window.innerWidth >= 650){
+            error.style.display = "block";
+            error.style.top = '60px';
+            error_text.innerHTML = "Введите номер в указаном формате";
+        }else{
+            error.style.display = "block";
+            error.style.top = '10px';
+            error.style.right = '50%';
+            error.style.marginRight = '-75px';
+            error_text.innerHTML = "Введите номер в указаном формате";
+        }
+        setTimeout(() => error.style.display = "none", 2000);
     }else{ // Успешный ввод номера телефона
 
         // Запись номера в скрытое поле 
@@ -109,14 +125,30 @@ submit.addEventListener("click", submitForm);
 submit_second.addEventListener("click", function(){
     let sms = document.getElementById("conf-val");
     if(!sms.value){
-        error.style.display = "block";
-        error.style.top = '200px';
-        error_text.innerHTML = "Введите код из смс";
+        if(window.innerWidth >= 650){
+            error.style.display = "block";
+            error.style.top = '200px';
+            error_text.innerHTML = "Введите код из смс";
+        }else{
+            error.style.display = "block";
+            error.style.top = '10px';
+            error.style.right = '50%';
+            error.style.marginRight = '-75px';
+            error_text.innerHTML = "Введите код из смс";
+        }
     }else if(!sms_regexp.test(sms.value)){
-        error.style.display = "block";
-        error.style.top = '200px';
-        error_text.innerHTML = "Введите код в правильном формате";
-        setTimeout(() => error.style.display = "none", 3000);
+        if(window.innerWidth >= 650){
+            error.style.display = "block";
+            error.style.top = '200px';
+            error_text.innerHTML = "Введите код в правильном формате";
+        }else{
+            error.style.display = "block";
+            error.style.top = '10px';
+            error.style.right = '50%';
+            error.style.marginRight = '-75px';
+            error_text.innerHTML = "Введите код в правильном формате";
+        }
+        setTimeout(() => error.style.display = "none", 2000);
     }else{
         $("form").unbind("submit", preventDefault);
     }

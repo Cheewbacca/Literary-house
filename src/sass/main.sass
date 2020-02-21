@@ -18,16 +18,25 @@ body
                 padding-top: 30px;
                 max-width: 1170px;
                 margin: 0 auto;
-                height: 50vh;
+                height: auto;
                 display: flex;
                 justify-content: space-around;
                 align-items: center;
+                flex-wrap: wrap;
                 .audio_seans_link, .audio_home_link   
                     width: 40%;
-                    height: 100%;
+                    height: 50vh;
                     border: 1px solid;
                     position: relative;
                     transition: 0.3s;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    min-width: 300px;                    
+                    @media screen and (max-width: 750px)
+                        height: 300px;
+                        width: 50%;
+                        margin-top: 25px;
                     &:hover
                         transform: scale(1.1);
                     a
@@ -40,4 +49,7 @@ body
                         font: $font;
                         font-size: 36px;
                         line-height: 280px;
+                    p
+                        font: $font;
+                        font-size: 24px;
         @import 'imports/footer.sass'
