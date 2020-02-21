@@ -5,63 +5,109 @@ header
         display: flex;
         margin: 0 auto;
         justify-content: space-between;
-        padding: 19px 0px 15px;
+        padding: 19px 12px 15px;
         border-bottom: 1px solid #d5d5d5;
         max-width: 1170px;
+        position: relative;
+        flex-wrap: wrap;
+        @media screen and (max-width: 1250px)
+            padding-bottom: 50px;
         .header-logo_and_nav
-            display: inline-block;
+            @media screen and (max-width: 1250px)
+                width: 50%;
+            @media screen and (max-width: 840px)
+                width: 30%; 
+                margin-right: 30px;
+            @media screen and (max-width: 655px)
+                width: 100%;
+                margin-right: initial;
             .header-logo
-                float: left;
+                min-width: 400px;
+                height: 100%;
+                @media screen and (max-width: 655px)
+                    min-width: initial;
+                    text-align: center;
                 .header-logo-top
                     font-size: 28px;
                     color: #21899b;
                     font: bold 28px'Arial', sans-serif;
                 .header-logo-bot
                     font: 18px 'Arial', sans-serif;
-            nav
-                float: right;
-                margin-left: 15px;
-                margin-top: 15px;
-                &:before
-                    content: '';
-                    height: 28px;
-                    width: 1px;
-                    margin-top: 7px;
-                    margin-right: 15px;
-                    display: inline-block;
-                    background: #d5d5d5;
-                    float: left;
-                ul 
-                    display: flex;
+                    width: 100%;
+                    white-space: nowrap;
+        nav
+            margin-left: 15px;
+            margin-top: 15px;
+            &:before
+                content: '';
+                height: 28px;
+                width: 1px;
+                margin-top: 7px;
+                margin-right: 15px;
+                display: inline-block;
+                background: #d5d5d5;
+                float: left;
+                @media screen and (max-width: 1250px)
+                    display: none;
+            @media screen and (max-width: 1250px)
+                position: absolute;
+                bottom: 0;
+                width: 80%;
+                left: 50%;
+                margin-left: -40%;
+            @media screen and (max-width: 655px)
+                width: 100%;
+                margin-top: 20px;
+                margin-left: -50%;
+            @media screen and (max-width: 499px)
+                display: none;
+            ul 
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-top: 9px;
+                @media screen and (max-width: 655px)
+                    flex-wrap: wrap;
+                    justify-content: center;
                     align-items: center;
-                    justify-content: space-between;
-                    padding-top: 9px;
-                    li
-                        line-height: 23px;
-                        &:not(:last-child)
-                            margin-right: 15px;
-                        a
-                            color: #000000;
-                            border-bottom: 1px solid transparent;
-                            transition: 0.4s ease-out;
-                            font: 14px 'Open Sans', sans-serif;
-                            white-space: nowrap;
-                            text-transform: uppercase;
-                            &:hover
-                                border-bottom-color: #000;
+                li
+                    line-height: 23px;
+                    &:not(:last-child)
+                        margin-right: 15px;
+                    a
+                        color: #000000;
+                        border-bottom: 1px solid transparent;
+                        transition: 0.4s ease-out;
+                        font: 14px 'Open Sans', sans-serif;
+                        white-space: nowrap;
+                        text-transform: uppercase;
+                        &:hover
+                            border-bottom-color: #000;
         .header-info
             display: flex;
             align-items: center;
             justify-content: space-between;
             min-width: 410px;
             height: 100%;
+            @media screen and (max-width: 1250px)
+                width: 50%;
+            @media screen and (max-width: 655px)
+                margin-top: 20px;
+                width: 100%;
+                min-width: initial;
+                flex-wrap: wrap;
             .header-languages
+                @media screen and (max-width: 655px)
+                    min-width: 100px;
+                    width: 100%;
                 ul 
                     width: 100%;
                     li 
                         display: flex;
                         align-items: center;
                         margin-top: 5px;
+                        @media screen and (max-width: 655px)
+                            justify-content: center;
                         img
                             width: 16px;
                             height: 11px;
@@ -70,8 +116,16 @@ header
                             font: 14px 'Open Sans', sans-serif
             .reception 
                 font: 14px 'Open Sans', sans-serif
+                @media screen and (max-width: 655px)
+                    margin-top: 20px;
+                    min-width: 140px;
+                    width: 100%;
+                    text-align: center;
             .phones 
                 height: 100%;
+                @media screen and (max-width: 655px)
+                    min-width: 140px;
+                    width: 100%;
                 ul 
                     display: flex;
                     flex-wrap: wrap;
@@ -79,7 +133,12 @@ header
                     height: 100%;
                     flex-wrap: wrap;
                     max-width: 150px;
+                    @media screen and (max-width: 655px)
+                        max-width: inital;
+                        margin: 10px auto;
                     li 
                         width: 100%;
+                        @media screen and (max-width: 655px)
+                            text-align: center;
                         a
                             font: 14px 'Open Sans', sans-serif

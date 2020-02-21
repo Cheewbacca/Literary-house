@@ -1,0 +1,99 @@
+.burger
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    border: 2px solid #000000;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 100;
+    padding: auto;
+    background-color: #ffffff;
+    display: none;
+    &:hover
+        background-color: #000000;
+        border: 2px solid #ffffff;
+        .strip
+            border: 1px solid #ffffff;
+            background-color: #ffffff;
+    @media screen and (max-width: 499px)
+        display: block;
+        top: 5px;
+        right: 5px;
+    .strip
+        width: 35%;
+        border: 1px solid;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2px;
+        background-color: #000000;
+        &:first-child
+            margin-top: 13px;  
+
+.cross
+    display: none;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    border: 3px solid #919191;
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    z-index: 1000;
+    padding: auto;
+    &:hover
+        border: 3px solid #ffffff;
+    @media screen and (max-width: 499px)
+        top: 10px;
+        right: 5px;
+    .close
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        &:before
+            transform: rotate(45deg);
+            position: absolute;
+            left: 21px;
+            top: 9px;
+            content: ' ';
+            height: 17px;
+            width: 2px;
+            background-color: #ffffff;
+        &:after
+            transform: rotate(-45deg);
+            position: absolute;
+            left: 21px;
+            top: 9px;
+            content: ' ';
+            height: 17px;
+            width: 2px;
+            background-color: #ffffff;
+.nav-hidden   
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $grey;
+    z-index: 1;
+    ul
+        padding: 100px 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center;
+        li 
+            text-align: center;
+            width: 100%;
+            a
+                color: #21899b;
+                font: $font;
+                font-size: 20px;
+                
+        
+
+
+        

@@ -7,12 +7,15 @@ html(lang="en")
         title Document
     body
         .wrapper
+            include includes/burger.pug
             include includes/header.pug
             .content
                 .informative_strip Небольшой текст про цены на книги или новинки
                 .audio_pages_hrefs
                     .audio_seans_link
-                        a(href="audio_seans.html") Лечебные аудиосеансы
+                        a(href="audio_seans.html") 
                     .audio_home_link   
-                        a(href="audio_home.html") Литературный дом
+                        a(href="audio_home.html") 
             include includes/footer.pug
+        script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
+        script(src="static//js//main.js")

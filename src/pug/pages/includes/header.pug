@@ -4,14 +4,14 @@ header
             a(href="index.html").header-logo
                 h1.header-logo-top Аудіокниги
                 h2.header-logo-bot дуже короткий слоган
-            nav
-                ul 
-                    -let items = new Map();
-                    -items.set("Лечебные аудиосеансы", "audio_seans.html").set("Литературный дом", "audio_home.html").set("Личный Кабинет", "my_room.html")
-                    -for(let [key,value] of items){
-                        li 
-                            a(href="" + value)= key
-                    -};
+        nav
+            ul 
+                -let items = new Map();
+                -items.set("Лечебные аудиосеансы", "audio_seans.html").set("Литературный дом", "audio_home.html").set("Личный Кабинет", "my_room.html")
+                -for(let [key,value] of items){
+                    li 
+                        a(href="" + value)= key
+                -};
         .header-info
             .header-languages
                 ul 
