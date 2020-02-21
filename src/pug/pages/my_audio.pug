@@ -16,6 +16,8 @@ html(lang="en")
                     include includes/bread_crumbs.pug
                     h3 Мои аудиосеансы
                     .music
+                        .empty-music
+                            h3 У вас пока нет аудиосеансов
                         .player(data-src="static/audio/test.mp3")
                             include includes/player-content.pug
                         .player(data-src="static/audio/test_2.mp3")
@@ -26,7 +28,6 @@ html(lang="en")
                             include includes/player-content.pug
                         .player(data-src="static/audio/test_2.mp3")
                             include includes/player-content.pug
-
 
             include includes/footer.pug
         script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")

@@ -3,7 +3,7 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        link(rel="stylesheet", href="static\\css\\my_audio.css")
+        link(rel="stylesheet", href="static\\css\\my_books.css")
         link(rel="stylesheet", href="static\\css\\audio_test.css")
         title Document
     body
@@ -16,6 +16,8 @@ html(lang="en")
                     include includes/bread_crumbs.pug
                     h3 Мои аудиокниги
                     .music
+                        .empty-music
+                            h3 У вас пока нет аудиокниг
                         .player(data-src="static/audio/test.mp3")
                             include includes/player-content.pug
                         .player(data-src="static/audio/test_2.mp3")

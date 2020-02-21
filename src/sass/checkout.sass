@@ -1,0 +1,29 @@
+@import 'imports/reset.sass'
+$grey: #e1e1e1;
+$font: 14px "Open Sans", sans-serif
+html
+    height: 100%;
+body
+    height: 100%;
+    .wrapper
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        @import 'imports/burger.sass'
+        @import 'imports/header.sass'
+        .content
+            flex: 1 0 auto;
+            main 
+                max-width: 1170px;
+                margin: 0 auto;
+                padding: 30px 12px 0;
+                position: relative;
+                height: 100%;
+                @import 'imports/bread_crumbs.sass'
+            h3 
+                font-size: 36px;
+                margin: 28px 0px 0px;
+                font-weight: normal;
+            .form-box
+                display: none;
+        @import 'imports/footer.sass'
