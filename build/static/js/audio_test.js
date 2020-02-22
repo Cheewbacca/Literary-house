@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function(){
             seekT = event.clientX - seekBarPos.left;
             seekLoc = audio.duration * (seekT / $(sArea[i]).outerWidth());
             audio.currentTime = seekLoc;
-            seekBar[i].width(seekT);
+            $(seekBar[i]).width(seekT);
         }
     }
 });
