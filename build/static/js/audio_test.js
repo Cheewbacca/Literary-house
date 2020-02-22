@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     for(let i = 0; i < container.length; i++){
         audio_list.push(container[i].dataset.src);
+        container[i].removeAttribute('data-src');
 
         $(cur_time).text("00:00");
         $(duration).text("00:00");
