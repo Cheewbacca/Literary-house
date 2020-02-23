@@ -1,4 +1,18 @@
 document.addEventListener("DOMContentLoaded", function(){
+
+    function getBrowserName(){
+        var ua = navigator.userAgent;    
+        if (ua.search(/Chrome/) > 0) return 'Chrome';
+        if (ua.search(/Firefox/) > 0) return 'Firefox';
+        if (ua.search(/Opera/) > 0) return 'Opera';
+        if (ua.search(/Safari/) > 0) return 'Safari';
+        if (ua.search(/MSIE/) > 0) return 'IE';
+
+        return 'Не определен';
+    }
+     
+    var browser = getBrowserName();
+
     container = document.querySelectorAll('.player');
     play = document.querySelectorAll('.play-pause-button');
     seekBar = document.querySelectorAll('.seek-bar');
@@ -20,10 +34,18 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // Заполнение массива музыкой
 
-    for(let i = 0; i < container.length; i++){
-        audio_list.push(container[i].dataset.src);
-        container[i].removeAttribute('data-src');
+    let format = null
 
+    if(browser == "Chrome" || browser == "Safari" || browser == "IE"){
+        format = "?format=mp3"
+    }else{
+        format = "?format=ogg"
+    }
+
+    for(let i = 0; i < container.length; i++){
+        audio_list.push(container[i].dataset.src + format);
+        container[i].removeAttribute('data-src');
+        
         $(cur_time).text("00:00");
         $(duration).text("00:00");
     }
