@@ -44,7 +44,7 @@ function checkStatusOfRequest(data) {
         error.style.display = "block";
         error.style.top = '60px';
         error_text.innerHTML = message;
-        setTimeout(()=>error.style.display = "none", 5000)
+        setTimeout(function(){error.style.display = "none";}, 5000);
         return 1;   
     }
     return 0;
@@ -66,7 +66,7 @@ function submitForm(){
             error.style.marginRight = '-75px';
             error_text.innerHTML = "Значение не должно быть пустым";
         }
-        setTimeout(() => error.style.display = "none", 2000);
+        setTimeout(function(){error.style.display = "none";}, 2000);
     }else if(!phone_regexp.test(phone.value)){
         if(window.innerWidth >= 650){
             error.style.display = "block";
@@ -79,7 +79,7 @@ function submitForm(){
             error.style.marginRight = '-75px';
             error_text.innerHTML = "Введите номер в указаном формате";
         }
-        setTimeout(() => error.style.display = "none", 2000);
+        setTimeout(function(){error.style.display = "none";}, 2000);
     }else{ // Успешный ввод номера телефона
 
         // Запись номера в скрытое поле 
@@ -148,7 +148,7 @@ submit_second.addEventListener("click", function(){
             error.style.marginRight = '-75px';
             error_text.innerHTML = "Введите код в правильном формате";
         }
-        setTimeout(() => error.style.display = "none", 2000);
+        setTimeout(function(){error.style.display = "none";}, 2000);
     }else{
         $("form").unbind("submit", preventDefault);
     }
