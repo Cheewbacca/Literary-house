@@ -1,8 +1,13 @@
 @import 'imports/reset.sass'
 $grey: #e1e1e1;
 $font: 14px "Open Sans", sans-serif
+::-webkit-scrollbar 
+    width: 0px;  
+    background: transparent;  
 html
     height: 100%;
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
 body
     height: 100%;
     .wrapper
@@ -19,12 +24,15 @@ body
                 max-width: 1170px;
                 margin: 0 auto;
                 height: auto;
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                flex-wrap: wrap;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(autofill, 100px)
+                grid-column-gap: 50px;
+                grid-row-gap: 50px;
+                @media screen and ( max-width: 768px )
+                    grid-template-columns: 1fr;
+                    padding: 0 12px;
                 .audio_seans_link, .audio_home_link   
-                    width: 40%;
                     height: 50vh;
                     border: 1px solid;
                     position: relative;
@@ -32,10 +40,9 @@ body
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    min-width: 300px;                    
+                    min-width: 300px;          
                     @media screen and (max-width: 750px)
                         height: 300px;
-                        width: 50%;
                         margin-top: 25px;
                         margin-left: 20px;
                     @media screen and (max-width: 500px)

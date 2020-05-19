@@ -1,0 +1,75 @@
+.reader-wrapper
+    max-width: 1170px;
+    margin: 0 auto;
+    position: relative;
+    .top-navigation
+        position: absolute
+        top: 50px
+        padding: 0 2em;
+        display: flex;
+        justify-content: space-between
+        width: 100%;
+        .reader-btn-prev, .reader-btn-next
+            padding: 5px 15px
+            background-color: #21899b
+            border-radius: 5px
+            color: #ffffff
+            max-height: 34px
+        .pagination
+            display: flex;
+            max-width: 80%;
+            overflow-x: scroll;
+            margin: 0 12px;
+            .page
+                margin: 0 10px;
+                border: 1px solid #333;
+                min-width: 30px;
+                display: flex;
+                align-items: center;
+                a
+                    display: block
+                    height: 100%;
+                    width: 100%;
+                    text-align: center;
+                    padding: 3px
+            .active
+                background-color: #21899b
+                a
+                    color: #ffffff
+               
+    .bottom-navigation
+        position: absolute
+        bottom: 50px
+        padding: 0 2em;
+        display: flex;
+        justify-content: space-between
+        width: 100%;
+        .reader-btn-prev, .reader-btn-next
+            padding: 5px 15px
+            background-color: #21899b
+            border-radius: 5px
+            color: #ffffff
+            max-height: 34px
+        .pagination
+            display: flex;
+            .page
+                margin: 0 10px;
+                border: 1px solid #333;
+                width: 30px;
+                display: flex;
+                align-items: center;
+                a
+                    display: block
+                    height: 100%;
+                    width: 100%;
+                    text-align: center;
+                    padding: 3px
+            .active
+                background-color: #21899b
+                a
+                    color: #ffffff
+    .reader-window
+        padding: 100px 2em;
+    p
+        margin: 15px 0;
+        user-select: none;      
