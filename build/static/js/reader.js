@@ -56,9 +56,15 @@ $(document).ready(function(){
     }
 
     // block text select
-    var text = $("#reader p");
+    var text = $("#reader").children();
 
     preventSelection(text);
+
+    $(function() {
+        $(this).bind("contextmenu", function(e) {
+            e.preventDefault();
+        });
+    }); 
 
     //get pages for book
     reader = document.getElementById('reader');
@@ -83,20 +89,19 @@ $(document).ready(function(){
         request.send(form);
     }
     })();
-
     
     // prev & next btns
     var prev = $('.reader-btn-prev');
 
     prev.on("click", function(e){
-        e.preventDefaul();
+        e.preventDefault();
         reader.open('prev');
     });
 
     var next = $('.reader-btn-next');
 
     next.on("click", function(e){
-        e.preventDefaul();
+        e.preventDefault();
         reader.open('next');
     });
 
