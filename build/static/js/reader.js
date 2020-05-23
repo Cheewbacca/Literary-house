@@ -77,6 +77,7 @@ $(document).ready(function(){
     return function(direction){
         if(direction != 'prev' && direction != 'next'){
             reader = this;
+            form.remove('open');
             form.set('position', direction);
     
             request = new XMLHttpRequest();
@@ -89,6 +90,7 @@ $(document).ready(function(){
             request.send(form);
         }else{
             reader = this;
+            form.remove('position');
             form.set('open', direction);
     
             request = new XMLHttpRequest();
