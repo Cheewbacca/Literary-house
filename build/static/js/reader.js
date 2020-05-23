@@ -68,25 +68,38 @@ $(document).ready(function(){
 
     //get pages for book
     reader = document.getElementById('reader');
+
     reader.open = (function(){
     form = new FormData;
     form.append('_token', document.getElementById('xsrf-token').getAttribute('content'));
     action = reader.getAttribute('data-iteration-url');
 
     return function(direction){
-        if(direction != 'prev' && direction != 'next') throw new Error('Invalid direction');
-
-        reader = this;
-        form.set('open', direction);
-
-        request = new XMLHttpRequest();
-        request.addEventListener('load', function(event){
-        if(this.status == 200)    reader.innerHTML = this.responseText;
-        else if(this.status == 204)  alert('No content anymore');
-        else            alert('Something went wrong');
-        });
-        request.open('post', action);
-        request.send(form);
+        if(direction != 'prev' && direction != 'next'){
+            reader = this;
+            form.set('position', direction);
+    
+            request = new XMLHttpRequest();
+            request.addEventListener('load', function(event){
+            if(this.status == 200)    reader.innerHTML = this.responseText;
+            else if(this.status == 204)  alert('No content anymore');
+            else            alert('Something went wrong');
+            });
+            request.open('post', action);
+            request.send(form);
+        }else{
+            reader = this;
+            form.set('open', direction);
+    
+            request = new XMLHttpRequest();
+            request.addEventListener('load', function(event){
+            if(this.status == 200)    reader.innerHTML = this.responseText;
+            else if(this.status == 204)  alert('No content anymore');
+            else            alert('Something went wrong');
+            });
+            request.open('post', action);
+            request.send(form);
+        }
     }
     })();
     
@@ -106,6 +119,13 @@ $(document).ready(function(){
     });
 
     // pagination
+
+    var page = $("[data-pos]");
+
+    page.on("click", function(e){
+        e.preventDefault();
+        reader.open(page.attr("data-pos"));
+    });
 
     if ($(window).width() < 768) {
         prev.text("<");
