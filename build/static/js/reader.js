@@ -77,7 +77,7 @@ $(document).ready(function(){
     return function(direction){
         if(direction != 'prev' && direction != 'next'){
             reader = this;
-            form.remove('open');
+            form.delete('open');
             form.set('position', direction);
     
             request = new XMLHttpRequest();
@@ -90,7 +90,7 @@ $(document).ready(function(){
             request.send(form);
         }else{
             reader = this;
-            form.remove('position');
+            form.delete('position');
             form.set('open', direction);
     
             request = new XMLHttpRequest();
@@ -126,7 +126,9 @@ $(document).ready(function(){
 
     page.on("click", function(e){
         e.preventDefault();
-        reader.open(page.attr("data-pos"));
+        page.removeClass("active");
+        reader.open($(this).attr("data-pos"));
+        $(this).addClass("active")
     });
 
     if ($(window).width() < 768) {
