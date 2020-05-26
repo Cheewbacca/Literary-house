@@ -108,9 +108,17 @@ $(document).ready(function(){
     // prev & next btns
     var prev = $('.reader-btn-prev');
 
+    var page = $("[data-pos]");
+
     prev.on("click", function(e){
         e.preventDefault();
         reader.open('prev');
+        var curPos = parseInt($(".active").attr("data-pos"));
+        if(curPos > 1){
+            curPos--;
+            page.removeClass("active");
+            $("[data-pos= " + curPos + "]").addClass("active");
+        }
     });
 
     var next = $('.reader-btn-next');
@@ -118,11 +126,13 @@ $(document).ready(function(){
     next.on("click", function(e){
         e.preventDefault();
         reader.open('next');
+        var curPos = parseInt($(".active").attr("data-pos"));
+        curPos++;
+        page.removeClass("active");
+        $("[data-pos= " + curPos + "]").addClass("active");
     });
 
     // pagination
-
-    var page = $("[data-pos]");
 
     page.on("click", function(e){
         e.preventDefault();
