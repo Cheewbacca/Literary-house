@@ -127,9 +127,9 @@ $(document).ready(function(){
             prev.show();
         } 
         if ($('.pagination li:last-child').hasClass("active")){
-            next.hide();
+            next.css("opacity", "0");
         }else{
-            next.show();
+            next.css("opacity", "1");
         }  
     });
 
@@ -150,9 +150,9 @@ $(document).ready(function(){
             prev.show();
         }
         if ($('.pagination li:last-child').hasClass("active")){
-            next.hide();
+            next.css("opacity", "0");
         }else{
-            next.show();
+            next.css("opacity", "1");
         }
     });
 
@@ -170,9 +170,9 @@ $(document).ready(function(){
             prev.show();
         }
         if ($('.pagination li:last-child').hasClass("active")){
-            next.hide();
+            next.css("opacity", "0");
         }else{
-            next.show();
+            next.css("opacity", "1");
         }
     });
 
