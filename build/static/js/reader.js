@@ -128,8 +128,10 @@ $(document).ready(function(){
         e.preventDefault();
         page.removeClass("active");
         reader.open($(this).attr("data-pos"));
-        $(this).addClass("active")
+        $(this).addClass("active");
+        $("[data-pos= " + $(this).attr("data-pos") + "]").addClass("active");
     });
+
 
     if ($(window).width() < 768) {
         prev.text("<");
