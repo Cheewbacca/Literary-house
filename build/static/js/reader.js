@@ -116,12 +116,12 @@ $(document).ready(function(){
         e.preventDefault();
         reader.open('prev');
         var curPos = parseInt($(".active").attr("data-pos"));
-        if(curPos > 1){
+        if(curPos > 0){
             curPos--;
             page.removeClass("active");
             $("[data-pos= " + curPos + "]").addClass("active");
         }
-        if($(".active").attr("data-pos") == 1){
+        if($(".active").attr("data-pos") == 0){
             prev.hide();
         }else{
             prev.show();
@@ -133,7 +133,7 @@ $(document).ready(function(){
         }  
     });
 
-    if($(".active").attr("data-pos") == 1){
+    if($(".active").attr("data-pos") == 0){
         prev.hide();
     }
 
@@ -144,7 +144,7 @@ $(document).ready(function(){
         curPos++;
         page.removeClass("active");
         $("[data-pos= " + curPos + "]").addClass("active");
-        if($(".active").attr("data-pos") == 1){
+        if($(".active").attr("data-pos") == 0){
             prev.hide();
         }else{
             prev.show();
@@ -164,7 +164,7 @@ $(document).ready(function(){
         reader.open($(this).attr("data-pos"));
         $(this).addClass("active");
         $("[data-pos= " + $(this).attr("data-pos") + "]").addClass("active");
-        if($(".active").attr("data-pos") == 1){
+        if($(".active").attr("data-pos") == 0){
             prev.hide();
         }else{
             prev.show();
