@@ -122,9 +122,9 @@ $(document).ready(function(){
             $("[data-pos= " + curPos + "]").addClass("active");
         }
         if($(".active").attr("data-pos") == 0){
-            prev.hide();
+            prev.css("opacity", "0");
         }else{
-            prev.show();
+            prev.css("opacity", "1");
         } 
         if ($('.pagination li:last-child').hasClass("active")){
             next.css("opacity", "0");
@@ -145,9 +145,9 @@ $(document).ready(function(){
         page.removeClass("active");
         $("[data-pos= " + curPos + "]").addClass("active");
         if($(".active").attr("data-pos") == 0){
-            prev.hide();
+            prev.css("opacity", "0");
         }else{
-            prev.show();
+            prev.css("opacity", "1");
         }
         if ($('.pagination li:last-child').hasClass("active")){
             next.css("opacity", "0");
@@ -165,9 +165,9 @@ $(document).ready(function(){
         $(this).addClass("active");
         $("[data-pos= " + $(this).attr("data-pos") + "]").addClass("active");
         if($(".active").attr("data-pos") == 0){
-            prev.hide();
+            prev.css("opacity", "0");
         }else{
-            prev.show();
+            prev.css("opacity", "1");
         }
         if ($('.pagination li:last-child').hasClass("active")){
             next.css("opacity", "0");
