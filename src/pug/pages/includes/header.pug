@@ -5,13 +5,25 @@ header
                 h1.header-logo-top Аудіокниги
                 h2.header-logo-bot дуже короткий слоган
         nav
-            ul 
-                -let items = new Map();
-                -items.set("Лечебные аудиосеансы", "audio_seans.html").set("Литературный дом", "audio_home.html").set("Личный Кабинет", "my_room.html")
-                -for(let [key,value] of items){
-                    li 
-                        a(href="" + value)= key
-                -};
+            //- ul 
+            //-     -let items = new Map();
+            //-     -items.set("Лечебные аудиосеансы", "audio_seans.html").set("Литературный дом", "audio_home.html").set("Личный Кабинет", "my_room.html")
+            //-     -for(let [key,value] of items){
+            //-         li 
+            //-             a(href="" + value)= key
+            //-     -};
+            ul
+                li
+                    a(href="index.html") Меню
+                    ul.sub_ul
+                        li
+                            a(href="audio_seans.html") Лечебные аудиосеансы
+                        li
+                            a(href="audio_home.html") Литературный дом
+                        li 
+                            a(href="books.html") Книги
+                li 
+                    a(href="my_room.html") Личный кабинет
         .header-info
             .header-languages
                 ul 

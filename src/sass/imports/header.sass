@@ -83,6 +83,19 @@ header
                         text-transform: uppercase;
                         &:hover
                             border-bottom-color: #000;
+                    &:first-child
+                        &:hover
+                            .sub_ul
+                                display: flex
+                    .sub_ul
+                        display: none;
+                        flex-wrap: wrap
+                        position: absolute;
+                        background-color: #ffffff
+                        padding: 20px 10px 10px;
+                        li
+                            width: 100%
+
         .header-info
             display: flex;
             align-items: center;
