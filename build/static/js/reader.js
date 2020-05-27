@@ -134,7 +134,7 @@ $(document).ready(function(){
     });
 
     if($(".active").attr("data-pos") == 0){
-        prev.hide();
+        prev.css("opacity", "0");
     }
 
     next.on("click", function(e){
