@@ -22,11 +22,19 @@ html
             border-radius: 5px
             color: #ffffff
             max-height: 34px
-        .pagination
+        .pagination_top
             display: flex;
-            max-width: 80%;
+            width: 100%
             overflow-x: scroll;
             margin: 0 12px;
+            .slick-prev, .slick-next
+                padding: 5px 15px
+                background-color: #21899b
+                border-radius: 5px
+                color: #ffffff
+                max-height: 34px;
+                border: initial;
+                cursor: pointer;
             .page
                 margin: 0 10px;
                 border: 1px solid #333;
@@ -40,7 +48,7 @@ html
                     width: 100%;
                     text-align: center;
                     padding: 3px
-            .active
+            .slick-current
                 background-color: #21899b
                 a
                     color: #ffffff
@@ -52,17 +60,25 @@ html
         display: flex;
         justify-content: space-between
         width: 100%;
-        .reader-btn-prev, .reader-btn-next
-            padding: 5px 15px
-            background-color: #21899b
-            border-radius: 5px
-            color: #ffffff
-            max-height: 34px
-        .pagination
+        // .reader-btn-prev, .reader-btn-next
+        //     padding: 5px 15px
+        //     background-color: #21899b
+        //     border-radius: 5px
+        //     color: #ffffff
+        //     max-height: 34px
+        .pagination_bot
             display: flex;
-            max-width: 80%;
+            width: 100%
             overflow-x: scroll;
             margin: 0 12px;
+            .slick-prev, .slick-next
+                padding: 5px 15px
+                background-color: #21899b
+                border-radius: 5px
+                color: #ffffff
+                max-height: 34px;
+                border: initial;
+                cursor: pointer;
             .page
                 margin: 0 10px;
                 border: 1px solid #333;
@@ -76,7 +92,7 @@ html
                     width: 100%;
                     text-align: center;
                     padding: 3px
-            .active
+            .slick-current
                 background-color: #21899b
                 a
                     color: #ffffff

@@ -105,80 +105,114 @@ $(document).ready(function(){
     }
     })();
     
-    // prev & next btns
-    var prev = $('.reader-btn-prev');
+     // pagination
 
-    var page = $("[data-pos]");
+    pagination = $(".pagination_top");
+    pagination_bottom = $(".pagination_bot");
 
-    var next = $('.reader-btn-next');
-
-    prev.on("click", function(e){
-        e.preventDefault();
-        reader.open('prev');
-        var curPos = parseInt($(".active").attr("data-pos"));
-        if(curPos > 0){
-            curPos--;
-            page.removeClass("active");
-            $("[data-pos= " + curPos + "]").addClass("active");
-        }
-        if($(".active").attr("data-pos") == 0){
-            prev.css("opacity", "0");
-        }else{
-            prev.css("opacity", "1");
-        } 
-        if ($('.pagination li:last-child').hasClass("active")){
-            next.css("opacity", "0");
-        }else{
-            next.css("opacity", "1");
-        }  
+    pagination.slick({
+        slidesToShow: Math.round( $(".pagination_top li").length / 2 ) >= 15 ? 15 : Math.round( $(".pagination_bot li").length / 2 ),
+        infinite: true,
+        swipeToSlide: true,
+        swipe: true,
+        responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow:  Math.round( $(".pagination_top li").length / 2 ) >= 5 ? 5 : Math.round( $(".pagination_top li").length / 2 ),
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow:  Math.round( $(".pagination_top li").length / 2 ) >= 4 ? 4 : Math.round( $(".pagination_top li").length / 2 ),
+            }
+        },
+        ],
     });
 
-    if($(".active").attr("data-pos") == 0){
-        prev.css("opacity", "0");
-    }
+    // alert($(".pagination_bot li").length) ;
 
-    next.on("click", function(e){
-        e.preventDefault();
-        reader.open('next');
-        var curPos = parseInt($(".active").attr("data-pos"));
-        curPos++;
-        page.removeClass("active");
-        $("[data-pos= " + curPos + "]").addClass("active");
-        if($(".active").attr("data-pos") == 0){
-            prev.css("opacity", "0");
-        }else{
-            prev.css("opacity", "1");
-        }
-        if ($('.pagination li:last-child').hasClass("active")){
-            next.css("opacity", "0");
-        }else{
-            next.css("opacity", "1");
-        }
+    pagination_bottom.slick({
+        slidesToShow: Math.round( $(".pagination_bot li").length / 2 ) >= 15 ? 15 : Math.round( $(".pagination_bot li").length / 2 ),
+        infinite: true,
+        swipeToSlide: true,
+        swipe: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow:  Math.round( $(".pagination_bot li").length / 2 ) >= 5 ? 5 : Math.round( $(".pagination_bot li").length / 2 ),
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow:  Math.round( $(".pagination_bot li").length / 2 ) >= 4 ? 4 : Math.round( $(".pagination_bot li").length / 2 ),
+                }
+            },
+            ],
     });
 
-    // pagination
+     // prev & next btns
+     var prev = $(".slick-prev");
+     prev.text("<");
+
+     var page = $("[data-pos]");
+ 
+     var next = $(".slick-next");
+     next.text(">");
+ 
+     prev.on("click", function(e){
+         e.preventDefault();
+         reader.open('prev');
+         var curPos = parseInt($(".active").attr("data-pos"));
+         if(curPos > 0){
+             curPos--;
+             page.removeClass("active");
+             $("[data-pos= " + curPos + "]").addClass("active");
+         }
+         if($(".active").attr("data-pos") == 0){
+             prev.css("opacity", "0");
+         }else{
+             prev.css("opacity", "1");
+         } 
+         if ($('.pagination li:last-child').hasClass("active")){
+             next.css("opacity", "0");
+         }else{
+             next.css("opacity", "1");
+         }  
+     });
+ 
+     if($(".active").attr("data-pos") == 0){
+         prev.css("opacity", "0");
+     }
+ 
+     next.on("click", function(e){
+         e.preventDefault();
+         reader.open('next');
+         var curPos = parseInt($(".slick-current").attr("data-pos"));
+         curPos++;
+         page.removeClass("active");
+         $("[data-pos= " + curPos + "]").addClass("active");
+         if($(".slick-current").attr("data-pos") == 0){
+             prev.css("opacity", "0");
+         }else{
+             prev.css("opacity", "1");
+         }
+         if ($('.pagination li:last-child').hasClass("slick-current")){
+             next.css("opacity", "0");
+         }else{
+             next.css("opacity", "1");
+         }
+     });
 
     page.on("click", function(e){
         e.preventDefault();
-        page.removeClass("active");
+        page.removeClass(".slick-current");
         reader.open($(this).attr("data-pos"));
-        $(this).addClass("active");
-        $("[data-pos= " + $(this).attr("data-pos") + "]").addClass("active");
-        if($(".active").attr("data-pos") == 0){
-            prev.css("opacity", "0");
-        }else{
-            prev.css("opacity", "1");
-        }
-        if ($('.pagination li:last-child').hasClass("active")){
-            next.css("opacity", "0");
-        }else{
-            next.css("opacity", "1");
-        }
+        $(this).addClass(".slick-current");
+        $("[data-pos= " + $(this).attr("data-pos") + "]").addClass(".slick-current");
     });
 
-
-    if ($(window).width() < 768) {
-        prev.text("<");
-        next.text(">");
-    } 
 });
