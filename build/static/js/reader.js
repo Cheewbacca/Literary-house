@@ -163,18 +163,23 @@ $(document).ready(function(){
  
      prev.on("click", function(e){
          e.preventDefault();
-         reader.open('prev');
+         reader.open(curPos - 1);
          var curPos = parseInt($(".slick-current").attr("data-pos"));
-        pagination.slick('slickGoTo', curPos - 1);
+         reader.open(curPos - 1);
+        pagination.slick('slickGoTo', curPos - 2);
         pagination_bottom.slick('slickGoTo', curPos - 1);
      });
  
      next.on("click", function(e){
          e.preventDefault();
-         reader.open('next');
          var curPos = parseInt($(".slick-current").attr("data-pos"));
-        pagination.slick('slickGoTo', curPos - 1);
+         reader.open(curPos + 1);
+        pagination.slick('slickGoTo', curPos);
         pagination_bottom.slick('slickGoTo', curPos - 1);
+        $(window).animate().scrollTop({
+            top: 0,
+            behavior: "smooth"
+        });
      });
 
     page.on("click", function(e){
