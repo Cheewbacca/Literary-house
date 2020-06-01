@@ -166,53 +166,26 @@ $(document).ready(function(){
      prev.on("click", function(e){
          e.preventDefault();
          reader.open('prev');
-         var curPos = parseInt($(".active").attr("data-pos"));
-         if(curPos > 0){
-             curPos--;
-             page.removeClass("active");
-             $("[data-pos= " + curPos + "]").addClass("active");
-         }
-         if($(".active").attr("data-pos") == 0){
-             prev.css("opacity", "0");
-         }else{
-             prev.css("opacity", "1");
-         } 
-         if ($('.pagination li:last-child').hasClass("active")){
-             next.css("opacity", "0");
-         }else{
-             next.css("opacity", "1");
-         }  
+         var curPos = parseInt($(".slick-current").attr("data-pos"));
+        pagination.slick('slickGoTo', curPos - 1);
+        pagination_bottom.slick('slickGoTo', curPos - 1);
      });
- 
-     if($(".active").attr("data-pos") == 0){
-         prev.css("opacity", "0");
-     }
  
      next.on("click", function(e){
          e.preventDefault();
          reader.open('next');
          var curPos = parseInt($(".slick-current").attr("data-pos"));
-         curPos++;
-         page.removeClass("active");
-         $("[data-pos= " + curPos + "]").addClass("active");
-         if($(".slick-current").attr("data-pos") == 0){
-             prev.css("opacity", "0");
-         }else{
-             prev.css("opacity", "1");
-         }
-         if ($('.pagination li:last-child').hasClass("slick-current")){
-             next.css("opacity", "0");
-         }else{
-             next.css("opacity", "1");
-         }
+        pagination.slick('slickGoTo', curPos - 1);
+        pagination_bottom.slick('slickGoTo', curPos - 1);
      });
 
     page.on("click", function(e){
         e.preventDefault();
-        page.removeClass(".slick-current");
         reader.open($(this).attr("data-pos"));
-        $(this).addClass(".slick-current");
-        $("[data-pos= " + $(this).attr("data-pos") + "]").addClass(".slick-current");
+        var slideno = $(this).data('pos');
+        alert(slideno);
+        pagination.slick('slickGoTo', slideno - 1);
+        pagination_bottom.slick('slickGoTo', slideno - 1);
     });
 
 });
