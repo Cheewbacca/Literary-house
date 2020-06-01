@@ -185,8 +185,8 @@ $(document).ready(function(){
         e.preventDefault();
         reader.open($(this).attr("data-pos"));
         var slideno = $(this).data('pos');
-        pagination.slick('slickGoTo', slideno - 1);
-        pagination_bottom.slick('slickGoTo', slideno - 1);
+        pagination.slick('slickGoTo', slideno);
+        pagination_bottom.slick('slickGoTo', slideno);
     });
 
 });
