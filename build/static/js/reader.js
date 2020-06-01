@@ -131,8 +131,6 @@ $(document).ready(function(){
         ],
     });
 
-    // alert($(".pagination_bot li").length) ;
-
     pagination_bottom.slick({
         slidesToShow: Math.round( $(".pagination_bot li").length / 2 ) >= 15 ? 15 : Math.round( $(".pagination_bot li").length / 2 ),
         infinite: true,
@@ -183,7 +181,6 @@ $(document).ready(function(){
         e.preventDefault();
         reader.open($(this).attr("data-pos"));
         var slideno = $(this).data('pos');
-        alert(slideno);
         pagination.slick('slickGoTo', slideno - 1);
         pagination_bottom.slick('slickGoTo', slideno - 1);
     });
