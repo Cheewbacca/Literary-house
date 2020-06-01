@@ -163,9 +163,8 @@ $(document).ready(function(){
  
      prev.on("click", function(e){
          e.preventDefault();
-         reader.open(curPos - 1);
          var curPos = parseInt($(".slick-current").attr("data-pos"));
-         reader.open(curPos - 1);
+         reader.open(curPos);
         pagination.slick('slickGoTo', curPos - 2);
         pagination_bottom.slick('slickGoTo', curPos - 1);
      });
@@ -173,7 +172,7 @@ $(document).ready(function(){
      next.on("click", function(e){
          e.preventDefault();
          var curPos = parseInt($(".slick-current").attr("data-pos"));
-         reader.open(curPos + 1);
+         reader.open(curPos);
         pagination.slick('slickGoTo', curPos);
         pagination_bottom.slick('slickGoTo', curPos - 1);
         $(window).animate().scrollTop({
