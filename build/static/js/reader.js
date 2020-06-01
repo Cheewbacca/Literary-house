@@ -160,7 +160,12 @@ $(document).ready(function(){
  
      var next = $(".slick-next");
      next.text(">");
- 
+
+    var readPos = parseInt($(".active").attr("data-pos"));
+
+    pagination.slick('slickGoTo', readPos);
+    pagination_bottom.slick('slickGoTo', readPos);
+
      prev.on("click", function(e){
          e.preventDefault();
          var curPos = parseInt($(".slick-current").attr("data-pos"));
